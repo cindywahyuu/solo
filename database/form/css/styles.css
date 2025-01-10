@@ -8164,11 +8164,25 @@ textarea.form-control-lg {
 }
 
 .bg-dark {
-  background-image: url('../../../assets/img/photo_2024-12-26_01-31-45.jpg'); /* Ganti dengan path gambar Anda */
-  background-size: cover; /* Membuat gambar menyesuaikan ukuran elemen */
-  background-position: center; /* Memusatkan gambar */
-  background-repeat: no-repeat; /* Mencegah gambar berulang */
+  position: relative;
+  background-image: url('../../../assets/img/photo_2024-12-26_01-31-45.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+/* Menambahkan overlay gelap dengan transparansi */
+.bg-dark::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.20); /* Warna hitam dengan 75% transparansi */
+  z-index: 1; /* Menempatkan overlay di atas gambar */
+}
+
 
 .bg-black {
   --bs-bg-opacity: 1;
